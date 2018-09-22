@@ -1,3 +1,6 @@
+ErrorDocument 404 /ci3/404
+ErrorDocument 403 /ci3/404
+
 RewriteEngine on
 RewriteCond $1 !^(index\.php|resources|robots\.txt)
 RewriteCond %{REQUEST_FILENAME} !-f

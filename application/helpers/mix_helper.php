@@ -14,3 +14,7 @@ function js($value='')
 {
     return '<script type="text/javascript" src="'.base_url("assets".mix($value)).'"></script>';
 }
+function css($value='')
+{
+    return '<link rel="stylesheet" href="'.base_url("assets".mix($value)).'"/>';
+}

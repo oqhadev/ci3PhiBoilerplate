@@ -59,7 +59,9 @@
                                         </p>
                                     </li>
                                     <li class="user-footer">
-                                       
+                                        <div class="pull-left">
+                                           <?php echo anchor($this->config->item("dashboardUrl").'user/profile', 'Profile', array('class' => 'btn btn-default btn-flat')); ?>
+                                        </div>
                                         <div class="pull-right">
                                             <?php echo anchor($this->config->item("dashboardUrl").'auth/logout', 'Logout', array('class' => 'btn btn-default btn-flat')); ?>
                                         </div>

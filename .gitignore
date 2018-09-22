@@ -13,7 +13,7 @@ package-lock.json
 /node_modules/
 /vendor/
 
-
+/assets/
 ## Sublime Text cache files
 *.tmlanguage.cache
 *package-lock.json

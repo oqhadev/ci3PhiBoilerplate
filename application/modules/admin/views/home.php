@@ -2,7 +2,6 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
 ???
-    <?php echo js("/js/backends.js") ;
 
 
     ?>

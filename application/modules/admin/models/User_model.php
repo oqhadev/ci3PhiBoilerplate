@@ -85,7 +85,7 @@ class User_model extends CI_Model
     function delete($id)
     {
 
-        unlink("./assets/foto_profil/".$this->db->from($this->table)->where($this->id, $id)->select('images')->get()->row()->images);
+        unlink("./assets/img/foto_profil/".$this->db->from($this->table)->where($this->id, $id)->select('images')->get()->row()->images);
         $this->db->where($this->id, $id);
         $this->db->delete($this->table);
     }

@@ -54,7 +54,7 @@
             success: function(html)
             { 
                 //load();
-                alert('sukses');
+                // alert('sukses');
             }
         });
     }    
