@@ -23,9 +23,10 @@ ci3 Phi Boilerplate
 
 
 #CRUD GENERATOR
+
 **Syntax**
 
-> php oqha.php create:crudDT <tableName string> <controllerOrModelName string>  <pathTo string> 
+php oqha.php create:crudDT <tableName string> <controllerOrModelName string>  <pathTo string> 
 
 **example**
 
