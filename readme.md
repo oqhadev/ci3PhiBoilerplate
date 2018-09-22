@@ -16,6 +16,8 @@ ci3 Phi Boilerplate
 * npm install
 * composer update
 * npm run dev
+* http://foo/admin/auth  username = admin@admin.com password = admin
+
 
 
 
