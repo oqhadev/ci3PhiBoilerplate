@@ -26,7 +26,7 @@ ci3 Phi Boilerplate
 
 **Syntax**
 
-php oqha.php create:crudDT <tableName string> <controllerOrModelName string>  <pathTo string> 
+php oqha.php create:crudDT (tableName string) (controllerOrModelName string)  (pathTo string) 
 
 **example**
 
