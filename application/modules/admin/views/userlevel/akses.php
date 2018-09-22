@@ -1,4 +1,16 @@
 <div class="content-wrapper">
+       <section class="content-header">
+      <h1>
+        Hak Akses
+        <small>List Hak Akses</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="<?php echo base_url('admin/home') ?>"><i class="fa fa-dashboard"></i> Beranda</a></li>
+        <li> <a href="<?php echo base_url('admin/userlevel') ?>">Hak Akses</a></li>
+        <li class="active">Akses</li>
+    </ol>
+</section>
+  
     <section class="content">
         <div class="row">
             <div class="col-xs-12">
@@ -44,17 +56,19 @@
 
 <script type="text/javascript">
     function kasi_akses(id_menu){
-        //alert(id_menu);
         var id_menu = id_menu;
         var level = '<?php echo $this->uri->segment(4); ?>';
-        //alert(level);
         $.ajax({
             url:"<?php echo base_url($this->config->item("dashboardUrl")."/userlevel/kasi_akses_ajax")?>",
             data:"id_menu=" + id_menu + "&level="+ level ,
             success: function(html)
             { 
-                //load();
-                // alert('sukses');
+                swal({
+  type: 'success',
+  title: 'Saved',
+  showConfirmButton: false,
+  timer: 1500
+})
             }
         });
     }    

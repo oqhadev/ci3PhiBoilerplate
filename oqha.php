@@ -35,7 +35,7 @@ error_reporting(0);
 
 
 	case 'create:crudDT':
-error_reporting(0);
+// error_reporting(0);
 	echo "Create Crud Datatables $argv[4]\r\n"; 
 
 	$paths=explode("/",$argv[4]);

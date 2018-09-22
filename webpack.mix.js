@@ -12,12 +12,16 @@ mix
     'node_modules/adminlte/dist/css/AdminLTE.min.css',
     'node_modules/adminlte/dist/css/skins/skin-blue.css',
     'node_modules/datatables.net-bs/css/dataTables.bootstrap.min.css',
+    'node_modules/sweetalert2/dist/sweetalert2.min.css',
     'application/assets/css/backend.css',
 ], 'assets/css/backends.css')
 
 .copyDirectory('node_modules/bootstrap3/fonts', 'assets/fonts/')
 
-// .copy('node_modules/bootstrap/dist/css/bootstrap.min.css.map', 'assets/css/bootstrap.min.css.map')
+.copy('node_modules/icheck/icheck.min.js', 'assets/js/icheck.min.js')
+.copy('node_modules/icheck/skins/square/blue.css', 'assets/css/')
+.copy('node_modules/icheck/skins/square/blue.png', 'assets/css/')
+.copy('node_modules/icheck/skins/square/blue@2x.png', 'assets/css/')
 
 .webpackConfig({
 resolve: {
@@ -38,8 +42,8 @@ jquery: "jquery/src/jquery"
  	], 'js/vendor.js')
     .scripts([
     'assets/js/manifest.js',
-    'assets/js/backend.js',
     'assets/js/vendor.js',
+    'assets/js/backend.js',
 ], 'assets/js/backends.js')
 
 .autoload({

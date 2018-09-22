@@ -1,18 +1,37 @@
 <div class="content-wrapper">
+    <section class="content-header">
+      <h1>
+        Hak Akses
+        <small>List Hak Akses</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="<?php echo base_url('admin/home') ?>"><i class="fa fa-dashboard"></i> Beranda</a></li>
+        <li class="active">Hak Akses</li>
+    </ol>
+</section>
     <section class="content">
         <div class="row">
             <div class="col-xs-12">
-                <div class="box box-primary box-solid">
+                <div class="box box-primary ">
     
                     <div class="box-header">
-                        <h3 class="box-title">KELOLA DATA LEVEL USER</h3>
+                        <h3 class="box-title">Kelola Data Level Admin</h3>
+
+                        <div class="pull-right">
+                            
+        <?php echo anchor(site_url($this->config->item("dashboardUrl").'userlevel/create'), '<i class="fa fa-wpforms" aria-hidden="true"></i> Tambah Data', 'class="btn btn-primary btn-sm"'); ?>
+                          <div class="btn-group ">
+
+                       <?php echo anchor(site_url($this->config->item("dashboardUrl").'userlevel/excel'), '<i class="fa fa-file-excel-o" aria-hidden="true"></i> Export Ms Excel', 'class="btn btn-success btn-sm"'); ?>
+        <?php echo anchor(site_url($this->config->item("dashboardUrl").'userlevel/word'), '<i class="fa fa-file-word-o" aria-hidden="true"></i> Export Ms Word', 'class="btn btn-primary btn-sm"'); ?>
+                        </div>
+                        
+                    </div>          
                     </div>
         
         <div class="box-body">
-        <div style="padding-bottom: 10px;"'>
-        <?php echo anchor(site_url($this->config->item("dashboardUrl").'userlevel/create'), '<i class="fa fa-wpforms" aria-hidden="true"></i> Tambah Data', 'class="btn btn-primary btn-sm"'); ?>
-		<?php echo anchor(site_url($this->config->item("dashboardUrl").'userlevel/excel'), '<i class="fa fa-file-excel-o" aria-hidden="true"></i> Export Ms Excel', 'class="btn btn-success btn-sm"'); ?>
-		<?php echo anchor(site_url($this->config->item("dashboardUrl").'userlevel/word'), '<i class="fa fa-file-word-o" aria-hidden="true"></i> Export Ms Word', 'class="btn btn-primary btn-sm"'); ?></div>
+        <div style="padding-bottom: 10px;">
+		</div>
         <table class="table table-bordered table-striped display responsive nowrap" cellspacing="0" width="100%"  id="tableDT">
             <thead>
                 <tr>
@@ -29,9 +48,7 @@
             </div>
     </section>
 </div>
-        <script src="<?php echo base_url('assets/js/jquery-1.11.2.min.js') ?>"></script>
-        <script src="<?php echo base_url('assets/datatables/jquery.dataTables.js') ?>"></script>
-        <script src="<?php echo base_url('assets/datatables/dataTables.bootstrap.js') ?>"></script>
+       
         <script type="text/javascript">
             $(document).ready(function() {
                 $.fn.dataTableExt.oApi.fnPagingInfo = function(oSettings)

@@ -17,7 +17,7 @@ $this->form_validation->CI =& $this;
 
     public function index()
     {
-        $this->template->load('admin','userlevel/tbl_user_level_list');
+        $this->template->load('admin','userlevel/tbl_user_level_list','Hak Akses List');
     } 
     
     public function json() {
@@ -33,7 +33,7 @@ $this->form_validation->CI =& $this;
 		'id_user_level' => $row->id_user_level,
 		'nama_level' => $row->nama_level,
 	    );
-            $this->template->load('admin','userlevel/tbl_user_level_read', $data);
+            $this->template->load('admin','userlevel/tbl_user_level_read','Hak Akses Detail', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('userlevel'));
@@ -43,7 +43,7 @@ $this->form_validation->CI =& $this;
     function akses(){
         $data['level'] = $this->db->get_where('tbl_user_level',array('id_user_level'=>  $this->uri->segment(4)))->row_array();
         $data['menu'] = $this->db->get('tbl_menu')->result();
-        $this->template->load('admin','userlevel/akses',$data);
+        $this->template->load('admin','userlevel/akses','Hak Akses',$data);
     }
     
     function kasi_akses_ajax(){
@@ -70,7 +70,7 @@ $this->form_validation->CI =& $this;
 	    'id_user_level' => set_value('id_user_level'),
 	    'nama_level' => set_value('nama_level'),
 	);
-        $this->template->load('admin','userlevel/tbl_user_level_form', $data);
+        $this->template->load('admin','userlevel/tbl_user_level_form','Create Hak Akses', $data);
     }
     
     public function create_action() 
@@ -85,7 +85,7 @@ $this->form_validation->CI =& $this;
 	    );
 
             $this->User_level_model->insert($data);
-            $this->session->set_flashdata('message', 'Create Record Success');
+            $this->session->set_flashdata('message', 'Create Success');
             redirect(site_url($this->config->item("dashboardUrl").'userlevel'));
         }
     }
@@ -101,7 +101,7 @@ $this->form_validation->CI =& $this;
 		'id_user_level' => set_value('id_user_level', $row->id_user_level),
 		'nama_level' => set_value('nama_level', $row->nama_level),
 	    );
-            $this->template->load('admin',$this->config->item("dashboardUrl").'userlevel/tbl_user_level_form', $data);
+            $this->template->load('admin',$this->config->item("dashboardUrl").'userlevel/tbl_user_level_form','Update Hak Akses', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url($this->config->item("dashboardUrl").'userlevel'));
@@ -120,7 +120,7 @@ $this->form_validation->CI =& $this;
 	    );
 
             $this->User_level_model->update($this->input->post('id_user_level', TRUE), $data);
-            $this->session->set_flashdata('message', 'Update Record Success');
+            $this->session->set_flashdata('message', 'Update Success');
             redirect(site_url($this->config->item("dashboardUrl").'userlevel'));
         }
     }
@@ -131,7 +131,7 @@ $this->form_validation->CI =& $this;
 
         if ($row) {
             $this->User_level_model->delete($id);
-            $this->session->set_flashdata('message', 'Delete Record Success');
+            $this->session->set_flashdata('message', 'Delete Success');
             redirect(site_url($this->config->item("dashboardUrl").'userlevel'));
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');

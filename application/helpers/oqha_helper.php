@@ -1,5 +1,11 @@
 <?php
-
+function dd($v)
+{
+    echo "<pre>";
+    print_r($v);
+    echo "</pre>";
+    
+}
 
 function rename_string_is_aktif($string){
         return $string=='y'?'Aktif':'Tidak Aktif';

@@ -1,15 +1,14 @@
 <div class="content-wrapper">
-<section class="content-header">
+    <section class="content-header">
       <h1>
-        Data Tables
-        <small>advanced tables</small>
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Tables</a></li>
-        <li class="active">Data tables</li>
-      </ol>
-    </section>
+        Admin
+        <small>List Admin</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="<?php echo base_url('admin/home') ?>"><i class="fa fa-dashboard"></i> Beranda</a></li>
+        <li class="active">Users</li>
+    </ol>
+</section>
 
     <section class="content">
         <div class="row">
@@ -17,11 +16,18 @@
                 <div class="box box-primary">
     
                     <div class="box-header">
-                        <h3 class="box-title">KELOLA DATA USER</h3>
+                        <h3 class="box-title">Kelola Data Admin</h3>
 
-                        <h3 class="box-title pull-right">   
+    <div class="pull-right">
+        
+                          <?php echo anchor(site_url($this->config->item("dashboardUrl").'user/create'), '<i class="fa fa-wpforms" aria-hidden="true"></i> Tambah Data', 'class="btn btn-primary btn-sm"'); ?>&nbsp;&nbsp;
+<div class="btn-group ">
 
-      </h3>
+        <?php echo anchor(site_url($this->config->item("dashboardUrl").'user/excel'), '<i class="fa fa-file-excel-o" aria-hidden="true"></i> Export Ms Excel', 'class="btn btn-success btn-sm"'); ?>
+        <?php echo anchor(site_url($this->config->item("dashboardUrl").'user/word'), '<i class="fa fa-file-word-o" aria-hidden="true"></i> Export Ms Word', 'class="btn btn-primary btn-sm"'); ?>
+</div>
+   
+    </div>                      
                     </div>
         
         <div class="box-body">
@@ -29,11 +35,7 @@
    
 
 
-                          <?php echo anchor(site_url($this->config->item("dashboardUrl").'user/create'), '<i class="fa fa-wpforms" aria-hidden="true"></i> Tambah Data', 'class="btn btn-primary btn-sm"'); ?>
-<div class="btn-group pull-right">
-        <?php echo anchor(site_url($this->config->item("dashboardUrl").'user/excel'), '<i class="fa fa-file-excel-o" aria-hidden="true"></i> Export Ms Excel', 'class="btn btn-success btn-sm"'); ?>
-        <?php echo anchor(site_url($this->config->item("dashboardUrl").'user/word'), '<i class="fa fa-file-word-o" aria-hidden="true"></i> Export Ms Word', 'class="btn btn-primary btn-sm"'); ?>
-</div>
+
         </div>
         <table class="table table-bordered table-striped display responsive nowrap" cellspacing="0" width="100%"  id="tableDT">
             <thead>

@@ -21,9 +21,9 @@ class User_level_model extends CI_Model
         $this->datatables->from('tbl_user_level');
         //add this line for join
         //$this->datatables->join('table2', 'tbl_user_level.field = table2.field');
-        $this->datatables->add_column('action', anchor(site_url($this->config->item("dashboardUrl").'userlevel/akses/$1'),'<i class="fa fa-eye" aria-hidden="true"></i>', array('class' => 'btn btn-primary btn-sm'))." 
+        $this->datatables->add_column('action', "<div class=\"btn-group\">".anchor(site_url($this->config->item("dashboardUrl").'userlevel/akses/$1'),'<i class="fa fa-eye" aria-hidden="true"></i>', array('class' => 'btn btn-primary btn-sm'))." 
             ".anchor(site_url($this->config->item("dashboardUrl").'userlevel/update/$1'),'<i class="fa fa-pencil-square-o" aria-hidden="true"></i>', array('class' => 'btn btn-primary btn-sm'))." 
-                ".anchor(site_url($this->config->item("dashboardUrl").'userlevel/delete/$1'),'<i class="fa fa-trash-o" aria-hidden="true"></i>','class="btn btn-danger btn-sm" onclick="javasciprt: return confirm(\'Are You Sure ?\')"'), 'id_user_level');
+                ".anchor(site_url($this->config->item("dashboardUrl").'userlevel/delete/$1'),'<i class="fa fa-trash-o" aria-hidden="true"></i>','class="btn btn-danger btn-sm" onclick="javasciprt: return confirm(\'Are You Sure ?\')"')."</div>", 'id_user_level');
         return $this->datatables->generate();
     }
 

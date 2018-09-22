@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-$config['dashboardJudul'] = 'OqhaDev boiler';
+$config['dashboardJudul'] = 'CI3 Phi Boilerplate';
 $config['dashboardUrl'] = 'admin/';
 /*
 |--------------------------------------------------------------------------

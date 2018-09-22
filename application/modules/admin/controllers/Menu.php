@@ -17,7 +17,7 @@ $this->form_validation->CI =& $this;
     public function index()
     {
         $data['setting'] = $this->db->get_where('tbl_setting',array('id_setting'=>1))->row_array();
-        $this->template->load('admin','menu/tbl_menu_list',$data);
+        $this->template->load('admin','menu/tbl_menu_list','Menu',$data);
     }
     
     function simpan_setting(){
@@ -32,25 +32,6 @@ $this->form_validation->CI =& $this;
         echo $this->Menu_model->json();
     }
 
-    public function read($id) 
-    {
-        $row = $this->Menu_model->get_by_id($id);
-        if ($row) {
-            $data = array(
-		'id_menu' => $row->id_menu,
-		'title' => $row->title,
-		'url' => $row->url,
-		'icon' => $row->icon,
-        'is_main_menu' => $row->is_main_menu,
-		'urutan' => $row->urutan,
-		'is_aktif' => $row->is_aktif,
-	    );
-            $this->template->load('admin','menu/tbl_menu_read', $data);
-        } else {
-            $this->session->set_flashdata('message', 'Record Not Found');
-            redirect(site_url($this->config->item("dashboardUrl").'menu'));
-        }
-    }
 
     public function create() 
     {
@@ -65,7 +46,7 @@ $this->form_validation->CI =& $this;
 	    'urutan' => set_value('urutan'),
 	    'is_aktif' => set_value('is_aktif'),
 	);
-        $this->template->load('admin','menu/tbl_menu_form', $data);
+        $this->template->load('admin','menu/tbl_menu_form','Create Menu', $data);
     }
     
     public function create_action() 
@@ -85,7 +66,7 @@ $this->form_validation->CI =& $this;
 	    );
 
             $this->Menu_model->insert($data);
-            $this->session->set_flashdata('message', 'Create Record Success');
+            $this->session->set_flashdata('message', 'Create Success');
             redirect(site_url($this->config->item("dashboardUrl").'menu'));
         }
     }
@@ -106,7 +87,7 @@ $this->form_validation->CI =& $this;
 		'urutan' => set_value('urutan', $row->urutan),
 		'is_aktif' => set_value('is_aktif', $row->is_aktif),
 	    );
-            $this->template->load('admin','menu/tbl_menu_form', $data);
+            $this->template->load('admin','menu/tbl_menu_form',"Update Menu", $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url($this->config->item("dashboardUrl").'menu'));
@@ -130,7 +111,7 @@ $this->form_validation->CI =& $this;
 	    );
 
             $this->Menu_model->update($this->input->post('id_menu', TRUE), $data);
-            $this->session->set_flashdata('message', 'Update Record Success');
+            $this->session->set_flashdata('message', 'Update Success');
             redirect(site_url($this->config->item("dashboardUrl").'menu'));
         }
     }
@@ -141,7 +122,7 @@ $this->form_validation->CI =& $this;
 
         if ($row) {
             $this->Menu_model->delete($id);
-            $this->session->set_flashdata('message', 'Delete Record Success');
+            $this->session->set_flashdata('message', 'Delete Success');
             redirect(site_url($this->config->item("dashboardUrl").'menu'));
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');

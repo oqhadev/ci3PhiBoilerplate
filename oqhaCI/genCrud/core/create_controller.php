@@ -80,7 +80,7 @@ foreach ($all as $row) {
 $string .= "\n\t    );
             \$this->load->view('$argv[4]/$c_url/$v_read', \$data);
         } else {
-            \$this->session->set_flashdata('message', 'Record Not Found');
+            \$this->session->set_flashdata('message', 'Not Found');
             redirect(site_url('$argv[4]/$c_url'));
         }
     }
@@ -95,7 +95,7 @@ foreach ($all as $row) {
     $string .= "\n\t    '" . $row['column_name'] . "' => set_value('" . $row['column_name'] . "'),";
 }
 $string .= "\n\t);
-        \$this->template->load('admin','$argv[4]/$c_url/$v_form', \$data);
+        \$this->template->load('admin','$argv[4]/$c_url/$v_form','Create ".ucfirst($table_name)."', \$data);
     }
     
     public function create_action() 
@@ -113,7 +113,7 @@ foreach ($non_pk as $row) {
 $string .= "\n\t    );
 
             \$this->".$m."->insert(\$data);
-            \$this->session->set_flashdata('message', 'Create Record Success 2');
+            \$this->session->set_flashdata('message', 'Create Success');
             redirect(site_url('$argv[4]/$c_url'));
         }
     }
@@ -130,9 +130,9 @@ foreach ($all as $row) {
     $string .= "\n\t\t'" . $row['column_name'] . "' => set_value('" . $row['column_name'] . "', \$row->". $row['column_name']."),";
 }
 $string .= "\n\t    );
-            \$this->template->load('admin','$argv[4]/$c_url/$v_form', \$data);
+            \$this->template->load('admin','$argv[4]/$c_url/$v_form','Update ".ucfirst($table_name)."', \$data);
         } else {
-            \$this->session->set_flashdata('message', 'Record Not Found');
+            \$this->session->set_flashdata('message', 'Not Found');
             redirect(site_url('$argv[4]/$c_url'));
         }
     }
@@ -151,7 +151,7 @@ foreach ($non_pk as $row) {
 $string .= "\n\t    );
 
             \$this->".$m."->update(\$this->input->post('$pk', TRUE), \$data);
-            \$this->session->set_flashdata('message', 'Update Record Success');
+            \$this->session->set_flashdata('message', 'Update Success');
             redirect(site_url('$argv[4]/$c_url'));
         }
     }
@@ -162,10 +162,10 @@ $string .= "\n\t    );
 
         if (\$row) {
             \$this->".$m."->delete(\$id);
-            \$this->session->set_flashdata('message', 'Delete Record Success');
+            \$this->session->set_flashdata('message', 'Delete Success');
             redirect(site_url('$argv[4]/$c_url'));
         } else {
-            \$this->session->set_flashdata('message', 'Record Not Found');
+            \$this->session->set_flashdata('message', 'Not Found');
             redirect(site_url('$argv[4]/$c_url'));
         }
     }

@@ -109,7 +109,8 @@ CREATE TABLE IF NOT EXISTS `tbl_user` (
 DELETE FROM `tbl_user`;
 /*!40000 ALTER TABLE `tbl_user` DISABLE KEYS */;
 INSERT INTO `tbl_user` (`id_users`, `full_name`, `email`, `password`, `images`, `id_user_level`, `is_aktif`) VALUES
-  (4, 'oqhadev', 'oqhatime@gmail.com', '$2y$04$6o4CbvOtWBdFYLv6llC4Je.HqZXMOgtazfNJLRRjYJP/HRckbsiAi', 'cari.png', 1, 'y');
+  (4, 'oqhadev', 'oqhatime@gmail.com', '$2y$04$6o4CbvOtWBdFYLv6llC4Je.HqZXMOgtazfNJLRRjYJP/HRckbsiAi', 'cari.png', 1, 'y'),
+  (8, 'Admin', 'admin@admin.com', '$2y$04$VUMElLwvzn7nFHwzFd1sHe5iG4OPVsDipRjFo8laIMpxw0veHq8RO', '61080_-_Copy.jpg', 1, 'y');
 /*!40000 ALTER TABLE `tbl_user` ENABLE KEYS */;
 
 -- Dumping structure for table ci3.tbl_user_level
@@ -130,3 +131,13 @@ INSERT INTO `tbl_user_level` (`id_user_level`, `nama_level`) VALUES
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+
+
+
+
+
+
+
+
+
+

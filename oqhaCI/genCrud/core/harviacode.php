@@ -19,12 +19,12 @@ class Harviacode
         $subject = file_get_contents('../../application/config/database.php');
         $string = str_replace("defined('BASEPATH') OR exit('No direct script access allowed');", "", $subject);
         
-        // $con = 'core/connection.php';
-        // $create = fopen($con, "w") or die("Change your permision folder for application and harviacode folder to 777");
-        // fwrite($create, $string);
-        // fclose($create);
+        $con = 'core/connection.php';
+        $create = fopen($con, "w") or die("Change your permision folder for application and harviacode folder to 777");
+        fwrite($create, $string);
+        fclose($create);
         
-        // require $con;
+        require $con;
 
         $this->host = $db['default']['hostname'];
         $this->user = $db['default']['username'];

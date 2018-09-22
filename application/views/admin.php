@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Dashboard - <?php echo $this->config->item("dashboardJudul")  ?></title>
+        <title><?php echo $title ?> - <?php echo $this->config->item("dashboardJudul")  ?></title>
         <!-- Tell the browser to be responsive to screen width -->
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
         <?php echo css("/css/backends.css") ?>
@@ -90,6 +90,14 @@
           
             <div class="control-sidebar-bg"></div>
         </div>
-
+        <script>
+            
+<?php echo ($this->session->flashdata('message')) ? "   setTimeout(function(){swal({
+  type: 'success',
+  title: '".$this->session->flashdata('message')."',
+  showConfirmButton: false,
+  timer: 3000
+})},3000); " : "" ?>  
+        </script>
     </body>
 </html>

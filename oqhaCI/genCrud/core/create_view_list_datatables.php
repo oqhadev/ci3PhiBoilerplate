@@ -1,19 +1,37 @@
 <?php 
 
 $string = "<div class=\"content-wrapper\">
+
+ <section class=\"content-header\">
+      <h1>
+        ".ucfirst($table_name)."
+        <small>List ".ucfirst($table_name)."</small>
+    </h1>
+    <ol class=\"breadcrumb\">
+        <li><a href=\"<?php echo base_url('admin/home') ?>\"><i class=\"fa fa-dashboard\"></i> Beranda</a></li>
+        <li class=\"active\">".ucfirst($table_name)."</li>
+    </ol>
+</section>
     <section class=\"content\">
         <div class=\"row\">
             <div class=\"col-xs-12\">
-                <div class=\"box box-primary box-solid\">
+                <div class=\"box box-primary\">
     
                     <div class=\"box-header\">
-                        <h3 class=\"box-title\">KELOLA DATA ".  strtoupper($table_name)."</h3>
-                    </div>
-        
-        <div class=\"box-body\">
-        <div style=\"padding-bottom: 10px;\"'>
-        <?php echo anchor(site_url('$argv[4]/$c_url/create'), '<i class=\"fa fa-wpforms\" aria-hidden=\"true\"></i> Tambah Data', 'class=\"btn btn-primary btn-sm\"'); ?>";
+                        <h3 class=\"box-title\">Kelola Data ".  ucfirst($table_name)."</h3>";
 
+
+
+$string.= "<div class=\"pull-right\">
+        
+ <?php echo anchor(site_url('$argv[4]/$c_url/create'), '<i class=\"fa fa-wpforms\" aria-hidden=\"true\"></i> Tambah Data', 'class=\"btn btn-primary btn-sm\"'); ?>";
+
+if($export_excel || $export_word || $export_pdf){
+    $string.="&nbsp;&nbsp;";
+}
+
+$string.="<div class=\"btn-group\">";
+    
 if ($export_excel == '1') {
     $string .= "\n\t\t<?php echo anchor(site_url('$argv[4]/$c_url/excel'), '<i class=\"fa fa-file-excel-o\" aria-hidden=\"true\"></i> Export Ms Excel', 'class=\"btn btn-success btn-sm\"'); ?>";
 }
@@ -23,6 +41,19 @@ if ($export_word == '1') {
 if ($export_pdf == '1') {
     $string .= "\n\t\t<?php echo anchor(site_url('$argv[4]/$c_url/pdf'), 'PDF', 'class=\"btn btn-primary\"'); ?>";
 }
+
+$string.="
+</div>
+</div>
+
+
+
+                    </div>
+        
+        <div class=\"box-body\">
+        <div style=\"padding-bottom: 10px;\">";
+
+       
 $string.="</div>
         <table class=\"table table-bordered table-striped display responsive nowrap\" cellspacing=\"0\" width=\"100%\"  id=\"tableDT\">
             <thead>
@@ -49,9 +80,7 @@ $string .= "\n\t
             </div>
     </section>
 </div>
-        <script src=\"<?php echo base_url('assets/js/jquery-1.11.2.min.js') ?>\"></script>
-        <script src=\"<?php echo base_url('assets/datatables/jquery.dataTables.js') ?>\"></script>
-        <script src=\"<?php echo base_url('assets/datatables/dataTables.bootstrap.js') ?>\"></script>
+   
         <script type=\"text/javascript\">
             $(document).ready(function() {
                 $.fn.dataTableExt.oApi.fnPagingInfo = function(oSettings)

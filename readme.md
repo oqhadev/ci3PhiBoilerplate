@@ -11,13 +11,45 @@ ci3 Phi Boilerplate
 
 
 ### Setup/Install
+* import sql file
 * Clone Repo
 * npm install
 * composer update
 * npm run dev
 
+
+
+### CLI
+
+
+#CRUD GENERATOR
+**Syntax**
+
+> php oqha.php create:crudDT <tableName string> <controllerOrModelName string>  <pathTo string> 
+
+**example**
+
+>php oqha.php create:crudDT sayur sayuran admin
+>- Applications
+>  - Modules
+>    - Admin
+>      - controller
+>        - sayuran.php
+>      - model
+>        - sayuran_model.php
+>      - view
+>        - sayuran
+>         - sayuran_list.php 
+>         - sayuran_form.php 
+
+
+
+
+
 ### Todo
-* Delete bunch of unused file
+* add laravel blade template engine
+* add logs action
+* add date helper
 * Clean Code
 * Create documentation
 * Add More CLI Command
