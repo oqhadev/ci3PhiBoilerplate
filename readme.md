@@ -5,9 +5,6 @@ ci3 Phi Boilerplate
 **Nikmat Laravel mana lagi yang kau dustakan**
 
 
-### Documentation
-* Cooming Soon
-
 
 
 ### Setup/Install
@@ -16,7 +13,7 @@ ci3 Phi Boilerplate
 * npm install
 * composer update
 * npm run dev
-* http://foo/admin/auth  username = admin@admin.com password = admin
+* login http://foo/admin/auth  username = admin@admin.com password = admin
 
 
 
@@ -27,7 +24,7 @@ ci3 Phi Boilerplate
 
 
 
-##### Crud Generator
+#### Crud Generator
 
 **Syntax**
 
@@ -54,7 +51,7 @@ php oqha.php create:crudDT (tableName string) (controllerOrModelName string)  (p
 
 
 
-##### Modules Create (Create Folder for Modules)
+#### Modules Create (Create Folder for Modules)
 
 **Syntax**
 
@@ -79,7 +76,7 @@ php oqha.php create:module (moduleName string)
 
 
 
-##### Seed with Faker
+#### Seed with Faker
 
 **Syntax**
 
