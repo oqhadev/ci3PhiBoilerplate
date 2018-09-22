@@ -2,7 +2,7 @@ ci3 Phi Boilerplate
 ===================================
 > Under Development
 
-Kusuka Laravel
+**Nikmat Laravel mana lagi yang kau dustakan**
 
 
 ### Documentation
