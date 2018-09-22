@@ -22,7 +22,7 @@ ci3 Phi Boilerplate
 ### CLI
 
 
-#CRUD GENERATOR
+##Crud Generator
 
 **Syntax**
 
@@ -42,6 +42,52 @@ php oqha.php create:crudDT (tableName string) (controllerOrModelName string)  (p
 >        - sayuran
 >          - sayuran_list.php 
 >          - sayuran_form.php 
+
+
+
+
+
+##Modules Create (Create Folder for Modules)
+
+**Syntax**
+
+php oqha.php create:module (moduleName string)  
+
+**example**
+
+>php oqha.php create:crudDT sayur
+>will create
+>
+>- Applications
+>  - Modules
+>    - sayur
+>      - controller
+>        - sayur.php
+>      - model
+>      - view
+
+
+
+##Seed with Faker
+
+**Syntax**
+
+php oqha.php seed (tableName string) (Total Int)
+
+**example**
+
+* first create files at application/seed/ 
+	name of seed files must be same as ur table name
+
+>// application/seed/tableName.php
+><?php 
+> $data = array(
+>                'tableNameFielduserName' => $faker->unique()->userName, 
+>                'tableNameFieldlastName' => $faker->lastName,
+>            );
+
+>* php oqha.php seed tableName 100
+
 
 
 
