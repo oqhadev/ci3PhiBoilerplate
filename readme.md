@@ -40,8 +40,8 @@ php oqha.php create:crudDT (tableName string) (controllerOrModelName string)  (p
 >        - sayuran_model.php
 >      - view
 >        - sayuran
->         - sayuran_list.php 
->         - sayuran_form.php 
+>          - sayuran_list.php 
+>          - sayuran_form.php 
 
 
 
