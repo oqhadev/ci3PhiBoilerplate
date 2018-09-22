@@ -31,6 +31,12 @@ Kusuka Laravel
 * [Laravel Mix](https://github.com/JeffreyWay/laravel-mix)
 * [AdminLTE](https://github.com/almasaeed2010/AdminLTE) 
 * [Faker](https://github.com/fzaninotto/Faker)
+* [Datatables](https://github.com/DataTables/DataTables)
+* [Mpdf](https://github.com/mpdf/mpdf)
+* HarviaCode Generator
+* others.....
+
+
 
 
 ## License
