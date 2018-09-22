@@ -14,6 +14,8 @@ package-lock.json
 /vendor/
 
 /assets/
+assets/css/*
+assets/js/*
 ## Sublime Text cache files
 *.tmlanguage.cache
 *package-lock.json
