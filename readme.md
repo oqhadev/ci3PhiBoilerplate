@@ -22,7 +22,10 @@ ci3 Phi Boilerplate
 ### CLI
 
 
-##Crud Generator
+
+
+
+##### Crud Generator
 
 **Syntax**
 
@@ -47,7 +50,9 @@ php oqha.php create:crudDT (tableName string) (controllerOrModelName string)  (p
 
 
 
-##Modules Create (Create Folder for Modules)
+
+
+##### Modules Create (Create Folder for Modules)
 
 **Syntax**
 
@@ -68,7 +73,11 @@ php oqha.php create:module (moduleName string)
 
 
 
-##Seed with Faker
+
+
+
+
+##### Seed with Faker
 
 **Syntax**
 
