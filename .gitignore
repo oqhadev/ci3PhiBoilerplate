@@ -9,13 +9,14 @@ application/logs/*
 !application/logs/.htaccess
 
 composer.lock
-package-logck.json
+package-lock.json
 /node_modules/
 /vendor/
 
 
 ## Sublime Text cache files
 *.tmlanguage.cache
+*package-lock.json
 *.tmPreferences.cache
 *.stTheme.cache
 *.sublime-workspace
