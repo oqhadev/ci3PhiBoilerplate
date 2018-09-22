@@ -18,6 +18,7 @@ Kusuka Laravel
 
 ### Todo
 * Delete bunch of unused file
+* Clean Code
 * Create documentation
 * Add More CLI Command
 * Add sublime snippset
