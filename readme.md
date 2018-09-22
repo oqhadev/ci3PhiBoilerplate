@@ -78,15 +78,16 @@ php oqha.php seed (tableName string) (Total Int)
 
 * first create files at application/seed/ 
 	name of seed files must be same as ur table name
+```php
+// application/seed/tableName.php
+<?php 
+ $data = array(
+                'tableNameFielduserName' => $faker->unique()->userName, 
+                'tableNameFieldlastName' => $faker->lastName,
+            );
+```
 
->// application/seed/tableName.php
-><?php 
-> $data = array(
->                'tableNameFielduserName' => $faker->unique()->userName, 
->                'tableNameFieldlastName' => $faker->lastName,
->            );
-
->* php oqha.php seed tableName 100
+>php oqha.php seed tableName 100
 
 
 
