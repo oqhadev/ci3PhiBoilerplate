@@ -1,0 +1,7 @@
+{
+    "name": "oqhadev/ci3",
+    "require": {},
+    "require-dev": {
+        "fzaninotto/Faker": "dev-master"
+    }
+}
